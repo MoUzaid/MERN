@@ -29,6 +29,29 @@ TrendZilla is a modern, scalable, and responsive **E-Commerce web application** 
 | 📱 Responsive Design       | Optimized layout for mobile, tablet, and desktop screens                     |
 
 ---
+## 📸 Screenshots
+
+### 🔍 Voice Search & Search Results
+![Search Results](screenshots/Search.png)
+
+### 🛍️ Product Cards (Grid View)
+![Product Grid](screenshots/product.png)
+
+### 👤 Admin Panel Banner
+![Admin Banner](screenshots/Admin.png)
+
+### 📂 Admin – Edit and Delete
+![Admin Categories](screenshots/AdminEditDelete.png)
+
+### 🏠 Homepage for Users
+![Homepage](screenshots/homepage.png)
+
+### 🛒 Cart
+![Cart](screenshots/Cart.png)
+
+### 💳Place Order
+![Place Order](screenshots/PlaceOrder.png)
+---
 
 ## 📁 Folder Structure
 ```plaintext
