@@ -47,7 +47,7 @@ const userCtrl = {
             jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
                 if (err) return res.status(403).json({ msg: "Invalid or expired refresh token" });
 
-                const accessToken = createAccessToken({ id: user.id }); // use `user.id` not `user._id`
+                const accessToken = createAccessToken({ id: user.id }); 
                 return res.json({ accessToken });
             });
         } catch (err) {
@@ -91,7 +91,7 @@ const userCtrl = {
         const user1 = await User.findById(req.user.id).select('-password');
         if (!user1) return res.status(404).json({ msg: "User not found" });
 
-        return res.json(user1); // ✅ Send user data (excluding password)
+        return res.json(user1);
     } catch (err) {
         return res.status(500).json({ msg: err.message });
     }
@@ -111,13 +111,11 @@ addCart: async (req, res) => {
 },
 deleteCart: async (req, res) => {
     try {
-        // console.log("user Id:"+userId);
         const idToRemove=req.params.id;
         const user=await User.findById(req.user.id);
         console.log("user:"+user);
         if(!user) return res.status(400).json({msg:"User not found"});
           user.cart = user.cart.filter(item => item._id.toString() !== idToRemove);
-      // 3. Save updated user
       await user.save();
     return res.json({ msg: "Item removed from cart" });
     } catch (err) {
@@ -127,10 +125,10 @@ deleteCart: async (req, res) => {
 
 UpdateAddress: async (req, res) => {
   try {
-    const userId = req.user.id; // req.user should be set from your auth middleware
+    const userId = req.user.id; 
     const updatedUser = await User.findByIdAndUpdate(
       userId,
-      { address: req.body }, // Update address with request body
+      { address: req.body }, 
       { new: true }
     );
     if (!updatedUser) {
